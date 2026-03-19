@@ -42,7 +42,7 @@ export default function Calendar() {
         ))}
       </div>
       {/* Calendar grid */}
-      <div className="grid grid-cols-7 bg-white border border-white">
+      <div className="grid grid-cols-7 divide-x divide-y divide-accent">
         {daysArray.map((day, index) => {
           // Render empty cells for days from the previous month
           if (day === null) {
@@ -59,6 +59,8 @@ export default function Calendar() {
           const dailyEvents = events.filter(
             (element) => element.dateVenue === dateString,
           );
+
+          console.log(dailyEvents);
 
           return <GridCell key={day} day={day} dailyEvents={dailyEvents} />;
         })}

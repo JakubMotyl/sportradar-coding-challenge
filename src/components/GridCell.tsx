@@ -1,7 +1,12 @@
-export default function GridCells() {
+interface GridCellProps {
+  day: number | null;
+  dailyEvents: string[];
+}
+
+export default function GridCell({ day, dailyEvents }: GridCellProps) {
   return (
     <div className="min-h-24 box-padding flex flex-col">
-      <div>Numer dnia</div>
+      <span>{day ? day : "-"}</span>
     </div>
   );
 }

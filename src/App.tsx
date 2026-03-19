@@ -1,6 +1,7 @@
+import Calendar from "./components/Calendar"
 function App() {
   return (
-    <div className="css">siema</div>
+    <Calendar />
   )
 }
 

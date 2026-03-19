@@ -14,7 +14,6 @@ export default function Calendar() {
   const daysArray = generateCalendarGrid(year, month);
 
   const events = eventsData.data;
-  console.log(events);
 
   return (
     <section className="max-w-7xl mx-auto bg-white rounded overflow-hidden">
@@ -59,8 +58,6 @@ export default function Calendar() {
           const dailyEvents = events.filter(
             (element) => element.dateVenue === dateString,
           );
-
-          console.log(dailyEvents);
 
           return <GridCell key={day} day={day} dailyEvents={dailyEvents} />;
         })}

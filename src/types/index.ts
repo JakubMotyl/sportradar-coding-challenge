@@ -5,7 +5,7 @@ interface Team {
 interface MatchResult {
   homeGoals: number;
   awayGoals: number;
-  winner?: string;
+  winner: string | null;
 }
 
 interface MatchStage {
@@ -13,14 +13,14 @@ interface MatchStage {
   name: string;
 }
 
-interface CalendarEvent {
+export interface CalendarEvent {
   status: string;
   dateVenue: string;
   timeVenueUTC: string;
-  stadium?: string;
-  homeTeam?: Team;
-  awayTeam?: Team;
-  result?: MatchResult;
+  stadium: string | null;
+  homeTeam: Team | null;
+  awayTeam: Team | null;
+  result: MatchResult | null;
   stage: MatchStage;
   originCompetitionName: string;
 }

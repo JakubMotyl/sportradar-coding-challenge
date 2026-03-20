@@ -6,15 +6,6 @@
     --color-accent: #9b8ec7;
 }
 
-body {
-    min-height: 100dvh;
-    color: #000;
-    background: var(--color-blue);
-    width: 100%;
-    display: grid;
-    align-content: center;
-}
-
 @layer utilities {
     .box-padding {
         @apply p-2;

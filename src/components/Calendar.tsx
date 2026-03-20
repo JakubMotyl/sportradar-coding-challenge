@@ -19,25 +19,28 @@ export default function Calendar() {
         <section className="max-w-7xl mx-auto bg-white rounded overflow-hidden">
             <div className="flex items-center justify-between box-padding">
                 <div className="flex items-center gap-2">
-                    <button className="cursor-pointer text-xl">
+                    <button className="cursor-pointer md:text-xl text-base">
                         <MdOutlineKeyboardArrowLeft />
                     </button>
-                    <p className="font-semibold uppercase text-base">
+                    <p className="font-semibold uppercase md:text-base text-sm">
                         JANUARY 2024
                     </p>
-                    <button className="cursor-pointer text-xl">
+                    <button className="cursor-pointer md:text-xl text-base">
                         <MdOutlineKeyboardArrowRight />
                     </button>
                 </div>
-                <button className="flex items-center font-semibold gap-2 text-base bg-accent text-white py-2 px-4 rounded cursor-pointer hover:scale-95 duration-300">
+                <button className="flex items-center font-semibold md:gap-2 gap-1 md:text-base text-sm bg-accent text-white md:py-2 py-1.5 md:px-4 px-2 rounded cursor-pointer hover:scale-95 duration-300">
                     Create
-                    <MdEventNote className="text-xl" />
+                    <MdEventNote className="md:text-xl text-base" />
                 </button>
             </div>
             {/* Display weekdays */}
             <div className="grid grid-cols-7 border-t border-b border-accent">
                 {weekDays.map((day) => (
-                    <div className="text-center py-1" key={day}>
+                    <div
+                        className="text-center md:text-base text-sm py-1 font-medium"
+                        key={day}
+                    >
                         {day}
                     </div>
                 ))}

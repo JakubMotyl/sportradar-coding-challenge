@@ -4,7 +4,6 @@ import eventsData from "../data/events.json";
 import {
     MdOutlineKeyboardArrowLeft,
     MdOutlineKeyboardArrowRight,
-    MdEventNote,
 } from "react-icons/md";
 
 export default function Calendar() {
@@ -17,8 +16,8 @@ export default function Calendar() {
 
     return (
         <section className="max-w-7xl mx-auto bg-white rounded overflow-hidden">
-            <div className="flex items-center justify-between box-padding">
-                <div className="flex items-center gap-2">
+            <div className="box-padding flex justify-center">
+                <div className="flex items-center justfify-center gap-1">
                     <button className="cursor-pointer md:text-xl text-base">
                         <MdOutlineKeyboardArrowLeft />
                     </button>
@@ -29,10 +28,6 @@ export default function Calendar() {
                         <MdOutlineKeyboardArrowRight />
                     </button>
                 </div>
-                <button className="flex items-center font-semibold md:gap-2 gap-1 md:text-base text-sm bg-accent text-white md:py-2 py-1.5 md:px-4 px-2 rounded cursor-pointer hover:scale-95 duration-300">
-                    Create
-                    <MdEventNote className="md:text-xl text-base" />
-                </button>
             </div>
             {/* Display weekdays */}
             <div className="grid grid-cols-7 border-t border-b border-accent">

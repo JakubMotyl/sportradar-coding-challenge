@@ -6,6 +6,10 @@
     --color-accent: #9b8ec7;
 }
 
+body {
+    background: var(--color-blue);
+}
+
 @layer utilities {
     .box-padding {
         @apply p-2;

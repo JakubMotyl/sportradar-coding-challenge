@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Calendar from "./components/Calendar";
 import EventDetails from "./components/EventDetails";
 import AddEventForm from "./components/AddEventForm";
@@ -41,6 +42,7 @@ function App() {
                     />
                 </Routes>
             </main>
+            <Footer />
         </BrowserRouter>
     );
 }

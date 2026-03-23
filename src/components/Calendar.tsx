@@ -4,6 +4,9 @@ import {
     MdOutlineKeyboardArrowLeft,
     MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
+import { FaLightbulb } from "react-icons/fa";
+import { IoMdCloseCircleOutline } from "react-icons/io";
+
 import type { CalendarEvent } from "../types";
 import { useState } from "react";
 
@@ -14,6 +17,7 @@ interface CalendarProps {
 export default function Calendar({ events }: CalendarProps) {
     const [year, setYear] = useState(2024);
     const [month, setMonth] = useState(1);
+    const [showLegend, setShowLegend] = useState(false);
 
     // Date text
     const date = new Date(year, month - 1);
@@ -23,7 +27,41 @@ export default function Calendar({ events }: CalendarProps) {
     const daysArray = generateCalendarGrid(year, month);
 
     return (
-        <section className="max-w-7xl mx-auto bg-white rounded overflow-hidden shadow-sm">
+        <section className="max-w-7xl mx-auto bg-white overflow-hidden rounded shadow-sm relative">
+            {/* Legend */}
+            <div className="absolute bottom-3 right-3">
+                <FaLightbulb
+                    className={`bulb ${showLegend ? "hidden" : "block"}`}
+                    onClick={() => setShowLegend(true)}
+                />
+                <div
+                    className={`${showLegend ? "block relative" : "hidden"} w-fit rounded py-2 pl-2 pr-8 bg-white border border-accent shadow-sm shadow-accent`}
+                >
+                    {/* Close Legend Button */}
+                    <div
+                        className="absolute top-0.5 right-0.5 cursor-pointer"
+                        onClick={() => setShowLegend(false)}
+                    >
+                        <IoMdCloseCircleOutline className="text-xl text-accent" />
+                    </div>
+                    {/* Red color legend */}
+                    <div className="flex items-center gap-2">
+                        <div className="legend-color bg-red-300"></div>
+                        <span className="legend-text">
+                            Events that were already played
+                        </span>
+                    </div>
+                    {/* Green color legend */}
+                    <div className="flex items-center gap-2">
+                        <div className="legend-color bg-green-300"></div>
+                        <span className="legend-text">
+                            Events that are scheduled
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            {/* Header */}
             <div className="box-padding flex justify-center">
                 <div className="flex items-center justfify-center gap-1">
                     <button className="cursor-pointer md:text-xl text-base">

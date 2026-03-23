@@ -32,4 +32,28 @@ body {
     .form-box-input {
         @apply py-1 px-2 md:text-base text-sm font-medium placeholder:font-normal placeholder:text-black/50 text-black outline-none rounded border-2 border-black/50 duration-200 focus:placeholder:text-accent focus:border-2 focus:border-accent;
     }
+
+    /* Calendar Legend */
+    .legend-color {
+        @apply w-6 h-2 rounded;
+    }
+    .legend-text {
+        @apply text-sm tracking-tighter;
+    }
+    .bulb {
+        @apply text-yellow-400 md:text-3xl text-2xl;
+        animation: bulbAnimation ease-in-out 1.5s infinite;
+        cursor: pointer;
+    }
+    @keyframes bulbAnimation {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(7px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
 }

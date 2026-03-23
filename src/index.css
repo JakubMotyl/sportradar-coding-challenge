@@ -14,4 +14,11 @@ body {
     .box-padding {
         @apply p-2;
     }
+    /* Event Details Page */
+    .event-details-container {
+        @apply flex flex-col items-center gap-2;
+    }
+    .team-logo {
+        @apply md:h-16 md:w-16 h-12 w-12 font-bold md:text-2xl text-xl flex items-center justify-center rounded-full text-dark-white bg-accent shadow-accent shadow-sm;
+    }
 }

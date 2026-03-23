@@ -1,28 +1,36 @@
 import GridCell from "./GridCell";
 import { weekDays, generateCalendarGrid } from "../utils/calendarUtils";
-import eventsData from "../data/events.json";
 import {
     MdOutlineKeyboardArrowLeft,
     MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
+import type { CalendarEvent } from "../types";
+import { useState } from "react";
 
-export default function Calendar() {
-    const year = 2024;
-    const month = 1;
+interface CalendarProps {
+    events: CalendarEvent[];
+}
+
+export default function Calendar({ events }: CalendarProps) {
+    const [year, setYear] = useState(2024);
+    const [month, setMonth] = useState(1);
+
+    // Date text
+    const date = new Date(year, month - 1);
+    const monthName = date.toLocaleString("en-US", { month: "long" });
+    const fullDateName = `${monthName} ${year}`;
 
     const daysArray = generateCalendarGrid(year, month);
 
-    const events = eventsData.data;
-
     return (
-        <section className="max-w-7xl mx-auto bg-white rounded overflow-hidden">
+        <section className="max-w-7xl mx-auto bg-white rounded overflow-hidden shadow-sm">
             <div className="box-padding flex justify-center">
                 <div className="flex items-center justfify-center gap-1">
                     <button className="cursor-pointer md:text-xl text-base">
                         <MdOutlineKeyboardArrowLeft />
                     </button>
                     <p className="font-semibold uppercase md:text-base text-sm">
-                        JANUARY 2024
+                        {fullDateName}
                     </p>
                     <button className="cursor-pointer md:text-xl text-base">
                         <MdOutlineKeyboardArrowRight />
@@ -56,7 +64,8 @@ export default function Calendar() {
 
                     // Format day to match JSON - instead of '2024-01-3' -> '2024-01-03'
                     const formattedDay = String(day).padStart(2, "0");
-                    const dateString = `${year}-01-${formattedDay}`;
+                    const formattedMonth = String(month).padStart(2, "0");
+                    const dateString = `${year}-${formattedMonth}-${formattedDay}`;
 
                     // Filter events that match the date
                     const dailyEvents = events.filter(

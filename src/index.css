@@ -21,4 +21,15 @@ body {
     .team-logo {
         @apply md:h-16 md:w-16 h-12 w-12 font-bold md:text-2xl text-xl flex items-center justify-center rounded-full text-dark-white bg-accent shadow-accent shadow-sm;
     }
+
+    /* Add Event Page */
+    .form-box {
+        @apply flex flex-col gap-1 w-full;
+    }
+    .form-box-title {
+        @apply font-semibold text-accent md:text-lg text-base;
+    }
+    .form-box-input {
+        @apply py-1 px-2 md:text-base text-sm font-medium placeholder:font-normal placeholder:text-black/50 text-black outline-none rounded border-2 border-black/50 duration-200 focus:placeholder:text-accent focus:border-2 focus:border-accent;
+    }
 }

@@ -4,10 +4,20 @@ import EventDetails from "./components/EventDetails";
 import AddEventForm from "./components/AddEventForm";
 import eventsData from "../src/data/events.json";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { CalendarEvent } from "./types";
 function App() {
-    const [events, setEvents] = useState<CalendarEvent[]>(eventsData.data);
+    const [events, setEvents] = useState<CalendarEvent[]>(() => {
+        const savedData = localStorage.getItem("calendar-storage");
+        if (savedData !== null) {
+            return JSON.parse(savedData);
+        } else {
+            return eventsData.data;
+        }
+    });
+    useEffect(() => {
+        localStorage.setItem("calendar-storage", JSON.stringify(events));
+    }, [events]);
 
     function handleAddEvent(e: CalendarEvent) {
         setEvents((prev) => [...prev, e]);

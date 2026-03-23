@@ -7,7 +7,6 @@ interface GridCellProps {
 }
 
 export default function GridCell({ day, dailyEvents }: GridCellProps) {
-    console.log(dailyEvents);
     return (
         <div className="md:h-24 h-20 md:px-2 px-1 py-1 flex flex-col gap-0.5 overflow-y-auto bg-white">
             <span className="font-black text-accent md:text-xs text-[0.6rem]">

@@ -1,0 +1,20 @@
+Reflection on AI Usage - Google Gemini
+
+Throughout the development of this project, I utilized AI as an assistant to streamline my workflow and improve efficiency.
+
+Here is a detailed breakdown of how I used AI:
+
+* Concept Explanation over Code Generation
+Whenever I encountered a feature or problem I wasn't really sure how to implement, I asked AI to explain the concepts and logic rather than generating ready to use blocks. This approach ensured I fully understood the mechanics.
+
+* Problem Structuring & Architecture
+I used AI at the planning stage to discuss and map out the component hierarchy. This helped create a clean foundation (e.g., separating calendar math into utility files away from React UI components).
+
+* UI Skeleton & Prototyping
+To speed up the development process, I used AI to generate base TailwindCSS layouts. This allowed me to focus on writing React state and interaction logic.
+
+* Debugging & Troubleshooting
+I used AI as an interactive debugging tool. When I encountered a specific CSS issue, the AI helped me quickly pinpoint the exact DOM element causing the layout break.
+
+* Code Refinement
+I occasionally asked AI to review specific snippets for best practices, such as correct TypeScript interfaces or fixing linguistic errors.

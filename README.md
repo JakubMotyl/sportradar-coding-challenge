@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# SportCal - Sports Event Calendar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and interactive sports event calendar built with **React**, **TypeScript** and **TailwindCSS**. This project was created as a recruitment task to demonstrate proficiency in frontend development.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework**: React
+- **Language**: TypeScript
+- **Styling**: TailwindCSS
+- **Routing**: React Router DOM
+- **Icons**: React Icons
+- **Build Tool**: Vite
+- **Testing**: Vitest
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Calendar View**: A clear grid-based interface for the current month.
+- **Event Details**: Dynamic routing with `react-router-dom`.
+- **Add New Event**: A functional, real-time form to expand the calendar during runtime.
+- **Persistent Storage**: Integration with `localStorage` to retain user-added events across sessions.
+- **Unit Testing**: Core business logic (calendar grid generation) verified with Vitest.
 
-## Expanding the ESLint configuration
+## Installation & Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Clone the repository**:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+    ```bash
+    git clone https://github.com/JakubMotyl/sportradar-coding-challenge.git
+    cd sportradar-coding-challenge
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2.  **Install dependencies**:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    ```bash
+    npm install
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3.  **Run the application (Development mode)**:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    ```bash
+    npm run dev
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4.  **Run tests**:
+    ```bash
+    npm run test
+    ```
+
+## Development Decisions and Prioritization
+
+- **Core Logic**: My primary focus was to ensure 100% functionality and high code quality. I prioritized a clean, "Basic UI" that is intuitive and bug-free over complex visual effects, ensuring predictable user experience.
+- **URL Slugs**: I implemented a slug-based routing system (`date-home-vs-away`) for event details to ensure readable URLs.
+- **Strict Typing**: I used TypeScript interfaces for all data structures to catch potential errors during development.
+- **State & Persistence**: I chose to use `localStorage` to sync the events. It provides a more complete real-world app experience.

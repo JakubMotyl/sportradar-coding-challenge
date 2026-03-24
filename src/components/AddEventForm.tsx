@@ -100,7 +100,7 @@ export default function AddEventForm({ handleAddEvent }: AddEventFormProps) {
                     />
                 </div>
 
-                <div className="flex items-center justify-between gap-20">
+                <div className="flex items-center md:flex-row flex-col justify-between md:gap-20 gap-6">
                     {/* Date */}
                     <div className="form-box">
                         <label htmlFor="dateVenue" className="form-box-title">
